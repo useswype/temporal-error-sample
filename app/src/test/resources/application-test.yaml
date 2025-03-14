@@ -1,0 +1,20 @@
+server:
+  port: 3030
+
+logging:
+  level:
+    root: DEBUG
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: swypex-sample-test
+  temporal:
+    connection:
+      target: 127.0.0.1:7233
+      target.namespace: default
+    workersAutoDiscovery:
+      packages: com.swypex.example
+    test-server:
+      enabled: true
