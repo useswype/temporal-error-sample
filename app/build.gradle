@@ -14,9 +14,6 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
 
-    implementation("com.google.firebase:firebase-admin:9.2.0")
-    implementation("com.google.guava:guava:33.2.0-jre")
-
 
     implementation("io.temporal:temporal-kotlin:1.28.1")
     implementation("io.temporal:temporal-spring-boot-starter:1.28.1")
