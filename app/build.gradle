@@ -1,8 +1,8 @@
 plugins {
-    id 'application'
+    id("application")
     alias(libs.plugins.kotlin.jvm)
-    id 'org.jetbrains.kotlin.plugin.spring' version '1.9.25'
-    id("org.springframework.boot").version("3.2.4")
+    id("org.jetbrains.kotlin.plugin.spring").version("1.9.25")
+    id("org.springframework.boot").version("3.4.3")
     id("io.spring.dependency-management").version("1.1.4")
     id("com.google.cloud.tools.jib").version("3.4.3")
 }
@@ -14,19 +14,15 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
 
-
     implementation("io.temporal:temporal-kotlin:1.28.1")
     implementation("io.temporal:temporal-spring-boot-starter:1.28.1")
 
-    implementation("org.springframework.boot:spring-boot-starter-pulsar") {
-        exclude group: 'com.google.protobuf', module: 'protobuf-java'
-    }
-
+    implementation("org.springframework.boot:spring-boot-starter-pulsar")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-    testImplementation libs.junit.jupiter
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation(libs.junit.jupiter)
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
